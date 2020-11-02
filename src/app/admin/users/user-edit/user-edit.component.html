@@ -1,0 +1,38 @@
+<div class="container">
+  <!--Navbar-->
+  <div class="jumbotron my-jumbotron" id="jumbotron-two">
+    <h2 class="my-h2">{{this?.message}} User</h2>
+
+      <form>
+        <div class="row">
+            <div class="col-6 form-group">
+              <label for="Name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="User name"
+                 [(ngModel)]="formUser.name" name="name">
+            </div>
+            <div class="col-6 form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Your username"
+                 [(ngModel)]="formUser.username" name="username">
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-6 form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Your password"
+                [(ngModel)]="formUser.password" name="password">
+            </div>
+            <div class="col-6 form-group">
+              <label for="password-rep">Confirm password</label>
+              <input type="password" class="form-control" id="password-rep" placeholder="Repeat password"
+                [(ngModel)]="repPassword" name="password-rep">
+            </div>
+      </div>
+      <div class="checkbox">
+          <label for="admin">Admin?</label>
+          <input type="checkbox" id="admin" [(ngModel)]="formUser.role" name="admin">
+      </div>
+          <button class="btn btn-outline-primary btn-color" (click)="onSubmit()">Submit</button>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <!--Navbar-->
+<div class="jumbotron my-jumbotron" id="jumbotron-two">
+    <h2 class="my-h2" id="my-title">Users admin</h2>
+
+    <button class="btn btn-outline-primary btn-color btn-sm" (click)="navigateToUserEdit('Add')">Add</button>
+    <!--button class="btn btn-outline-primary btn-color btn-sm" (click)="test()">Test</button-->
+
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-hover my-table">
+                  <thead>
+                    <tr>
+                        <th><i>Name</i></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let user of users">
+                    <tr>
+                      <td>{{user.name}}</td>
+                      <td><button class="btn btn-outline-primary btn-color btn-sm" (click)="openUserDesign(user)">View</button></td>
+
+                    </tr>
+
+                  </tbody>
+              </table>
+          </div>
+          <div class="col-6" >
+              <app-user-design [user]="selectedUser" *ngIf="action==='design' && selectedUser!=null"></app-user-design>
+          </div>
+      </div>
+  </div>
+</div>

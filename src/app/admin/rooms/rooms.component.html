@@ -1,0 +1,40 @@
+<div class="container">
+  <!--Navbar-->
+<div class="jumbotron my-jumbotron" id="jumbotron-two">
+    <h2 class="my-h2" id="my-title">Rooms admin</h2>
+
+    <button class="btn btn-outline-primary btn-color btn-sm" (click)="navigateToRoomEdit('Add')">Add</button>
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-hover my-table">
+                  <thead>
+                    <tr>
+                        <th><i>Name</i></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Blue meeting room</td>
+                      <td><button class="btn btn-outline-primary btn-color btn-sm" (click)="openRoomDesign()">View</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Red meeting room</td>
+                      <td><button class="btn btn-outline-primary btn-color btn-sm">View</button></td>
+
+                    </tr>
+                    <tr>
+                      <td>Main Conference room</td>
+                      <td><button class="btn btn-outline-primary btn-color btn-sm">View</button></td>
+
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="col-6">
+            <app-room-design *ngIf="design"></app-room-design>
+          </div>
+        </div>
+  </div>
+</div>

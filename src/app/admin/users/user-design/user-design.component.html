@@ -1,0 +1,23 @@
+<div class="selectedUser" id="righty">
+              <h4 class="my-h4" id="my-title">User details</h4>
+              <table class="table table-hover my-table">
+                  <thead>
+                    <tr>
+                        <th><button class="btn btn-outline-primary btn-color btn-sm" (click)="navigateToUserEdit('Edit',user.id)">Edit</button> <button class="btn btn-warning btn-sm" id="space">Delete</button> </th>
+                        <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><i>Name</i></td>
+                      <td>{{user.name}}</td>
+
+                    </tr>
+                    <tr>
+                      <td><i>Username</i></td>
+                      <td>{{user.username}}</td>
+
+                    </tr>
+                  </tbody>
+              </table>
+</div>

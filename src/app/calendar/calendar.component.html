@@ -1,0 +1,56 @@
+<div class="container">
+  <!--Navbar-->
+  <div class="jumbotron my-jumbotron" id="jumbotron-one">
+    <h2 class="my-h2">Room Booking system</h2>
+    <br/>
+    <h4 class = "my-h4">The following meetings are taking place on:</h4>
+    <!--Calendar-->
+    <input type="date" id="booking-date" name="booking-date">
+    <br/>
+    <div class="button-one">
+      <button type="button" class="btn btn-outline-primary btn-color" (click)="navigateToEditBooking()">New Booking</button>
+    </div>
+  </div>
+  <div class="jumbotron my-jumbotron" id="jumbotron-two">
+      <div class="container">
+          <div class="row row-striped">
+              <div class="col-2 text-right">
+                  <h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
+                  <h2>OCT</h2>
+              </div>
+              <div class="col-8">
+                  <h3 class="text-uppercase"><strong>Ice Cream Social</strong></h3>
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
+                      <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
+                      <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Cafe</li>
+                  </ul>
+                  <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="col-2">
+                  <button type="button" class="btn btn-outline-primary btn-color custom">Amend</button>
+                  <button type="button" class="btn btn-warning custom">Cancel</button>
+              </div>
+          </div>
+          <div class="row row-striped">
+              <div class="col-2 text-right">
+                  <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
+                  <h2>OCT</h2>
+              </div>
+              <div class="col-8">
+                  <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
+                      <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
+                      <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
+                  </ul>
+                  <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="col-2">
+                  <button type="button" class="btn btn-outline-primary btn-color custom">Amend</button>
+                  <button type="button" class="btn btn-warning custom">Cancel</button>
+              </div>
+          </div>
+   </div>
+  </div>
+</div>
