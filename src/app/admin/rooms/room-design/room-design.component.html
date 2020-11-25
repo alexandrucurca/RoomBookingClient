@@ -3,33 +3,29 @@
   <table class="table table-hover my-table">
       <thead>
         <tr>
-            <th><button class="btn btn-outline-primary btn-color btn-sm" (click)="navigateToRoomEdit('Edit')">Edit</button> <button class="btn btn-warning btn-sm" id="space">Delete</button> </th>
+            <th><button class="btn btn-outline-primary btn-color btn-sm" (click)="navigateToRoomEdit()">Edit</button> <button class="btn btn-warning btn-sm" id="space">Delete</button> </th>
             <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngIf="room">
         <tr>
           <td><i>Name</i></td>
-          <td>Blue meeting room</td>
+          <td>{{room.name}}</td>
 
         </tr>
         <tr>
           <td><i>Location</i></td>
-          <td>2nd floor</td>
+          <td>{{room.location}}</td>
 
         </tr>
       </tbody>
   </table>
   <h5 class="my-h5">This room can acomodate</h5>
   <table class="table table-sm">
-          <tr>
-              <td><i>Ushape</i></td>
-              <td>12</td>
+          <tr *ngFor="let layoutCapacity of room.layouts">
+              <td class="row-layouts"><i>{{layoutCapacity.layout.name}}</i></td>
+              <td>{{layoutCapacity.capacity}}</td>
             </tr>
-          <tr>
-              <td><i>Theater</i></td>
-              <td>8</td>
-          </tr>
-
   </table>
+
 </div>

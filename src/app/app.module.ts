@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 import { Route } from '@angular/compiler/src/core';
 import { EditBookingComponent } from './calendar/edit-booking/edit-booking.component';
 import { RoomsComponent } from './admin/rooms/rooms.component';
@@ -14,6 +15,7 @@ import { UsersComponent } from './admin/users/users.component';
 import { RoomDesignComponent } from './admin/rooms/room-design/room-design.component';
 import { UserDesignComponent } from './admin/users/user-design/user-design.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyModalComponent } from './admin/rooms/my-modal/my-modal.component';
 
 const routes : Routes = [
   {path: '', component: CalendarComponent},
@@ -36,10 +38,12 @@ const routes : Routes = [
     RoomEditComponent,
     UserEditComponent,
     RoomDesignComponent,
-    UserDesignComponent
+    UserDesignComponent,
+    MyModalComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)

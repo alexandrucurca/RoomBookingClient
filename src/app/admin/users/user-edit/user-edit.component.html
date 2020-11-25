@@ -3,7 +3,7 @@
   <div class="jumbotron my-jumbotron" id="jumbotron-two">
     <h2 class="my-h2">{{this?.message}} User</h2>
 
-      <form>
+      <form *ngIf="formUser">
         <div class="row">
             <div class="col-6 form-group">
               <label for="Name">Name</label>

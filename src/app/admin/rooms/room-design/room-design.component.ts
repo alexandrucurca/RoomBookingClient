@@ -1,6 +1,7 @@
 import { Route } from '@angular/compiler/src/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Room } from 'src/app/model/Room';
 
 @Component({
   selector: 'app-room-design',
@@ -8,6 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./room-design.component.css']
 })
 export class RoomDesignComponent implements OnInit {
+
+  @Input()
+  room: Room;
 
   message: string;
 
@@ -17,7 +21,9 @@ export class RoomDesignComponent implements OnInit {
     console.log("room-design OnInit");
   }
 
-  navigateToRoomEdit(action: string){
-    this.router.navigate(['admin','rooms','room-edit'],{queryParams:{action: action}});
+  navigateToRoomEdit(){
+    this.router.navigate(['admin','rooms','room-edit'],{queryParams:{action: 'Edit', id:this.room.id}});
  }
+
+
 }

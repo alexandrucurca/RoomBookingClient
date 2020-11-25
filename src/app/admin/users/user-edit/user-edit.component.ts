@@ -14,6 +14,7 @@ export class UserEditComponent implements OnInit {
   formUser: User;
   message: string;
   repPassword: string;
+  waiting = true;
 
   constructor(private route: ActivatedRoute,
               private dataService: DataService,
@@ -36,14 +37,25 @@ export class UserEditComponent implements OnInit {
               });
               //console.log(this.user.name);
             }
+            else{
+              this.formUser = new User();
+            }
          }
-
      });
   }
 
-  //Doar cazul edit --> TO DO, add
+
   onSubmit(){
-    this.dataService.putUser(this.formUser);
-    this.router.navigate(['admin','users'], {queryParams:{action:'design', id: this.formUser.id}});
+    this.waiting = true;
+    if(this.message === "Edit"){
+      this.dataService.putUser(this.formUser).subscribe(el=>{
+        this.router.navigate(['admin','users'], {queryParams:{action:'design', id: this.formUser.id}});
+      });
+    }
+    else{
+      this.dataService.postUser(this.formUser).subscribe(el=>{
+        this.router.navigate(['admin','users'], {queryParams:{action:'design', id: this.formUser.id}});
+      });
+    }
   }
 }

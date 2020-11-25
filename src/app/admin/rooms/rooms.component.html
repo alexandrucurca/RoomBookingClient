@@ -1,39 +1,52 @@
 <div class="container">
+
+   <!--IF NOT STILL LOADED-->
+   <div *ngIf="rooms==null"  id="circle">
+    <div class="loader">
+      <div class="loader">
+          <div class="loader">
+             <div class="loader">
+
+             </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
   <!--Navbar-->
-<div class="jumbotron my-jumbotron" id="jumbotron-two">
+<div *ngIf="rooms" class="jumbotron my-jumbotron" id="jumbotron-two">
     <h2 class="my-h2" id="my-title">Rooms admin</h2>
 
-    <button class="btn btn-outline-primary btn-color btn-sm" (click)="navigateToRoomEdit('Add')">Add</button>
+    <button class="btn btn-outline-primary btn-color btn-sm" (click)="navigateToRoomEdit()">Add</button>
     <div class="row">
         <div class="col-6">
-            <table class="table table-hover my-table">
+           <!-- Button to Open the Modal --erase when finished -->
+          <br>
+           <button type="button" class="btn btn-outline-primary btn-color btn-sm" data-toggle="modal" data-target="#myModal" (click)="pickRoomforModal()" >
+            Open modal
+          </button>
+
+            <table class="table table-hover my-table" *ngIf="rooms">
                   <thead>
                     <tr>
                         <th><i>Name</i></th>
                       <th></th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody *ngFor="let room of rooms">
                     <tr>
-                      <td>Blue meeting room</td>
-                      <td><button class="btn btn-outline-primary btn-color btn-sm" (click)="openRoomDesign()">View</button></td>
-
-                    </tr>
-                    <tr>
-                      <td>Red meeting room</td>
-                      <td><button class="btn btn-outline-primary btn-color btn-sm">View</button></td>
-
-                    </tr>
-                    <tr>
-                      <td>Main Conference room</td>
-                      <td><button class="btn btn-outline-primary btn-color btn-sm">View</button></td>
+                      <td>{{room.name}}</td>
+                      <td><button class="btn btn-outline-primary btn-color btn-sm" (click)="openRoomDesign(room.id)">View</button></td>
 
                     </tr>
                   </tbody>
               </table>
+              <!--MODAL FOR TEST-- DELETE WHEN YOU SEE-->
+              <app-my-modal *ngIf="modalRoom" [room]="modalRoom"></app-my-modal>
+
           </div>
           <div class="col-6">
-            <app-room-design *ngIf="design"></app-room-design>
+            <app-room-design [room]="selectedRoom" *ngIf="action==='design' && selectedRoom"></app-room-design>
           </div>
         </div>
   </div>

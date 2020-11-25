@@ -95,3 +95,27 @@ body{
         box-shadow: 2px 2px 20px 2px rgba(187, 187, 187, 0.44);
   }
 
+  /*CIRCLE SPINNER*/
+  #circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	width: 150px;
+    height: 150px;
+}
+
+.loader {
+    width: calc(100% - 0px);
+	height: calc(100% - 0px);
+	border: 8px solid #162534;
+	border-top: 8px solid rgba(102, 57, 188, 1);
+	border-radius: 50%;
+	animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+100% {transform: rotate(360deg);}
+}
+
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-calendar',
@@ -8,9 +9,12 @@ import { Router } from '@angular/router';
 })
 export class CalendarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private dataService: DataService) { }
 
   ngOnInit() {
+    //TO ERASE WHEN SEEN
+
   }
 
   navigateToEditBooking(){
@@ -20,5 +24,7 @@ export class CalendarComponent implements OnInit {
   navigateToUsers(){
     this.router.navigate(['admin','rooms']);
   }
+
+
 
 }

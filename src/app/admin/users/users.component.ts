@@ -22,12 +22,16 @@ export class UsersComponent implements OnInit {
     console.log("users --> ngOnOnit()");
     /* GET MY USERS */
     this.dataSerivce.getUsers().subscribe((data)=>{
-    this.users = data;
-
+        this.users = data;
+        // if I get the users
+        /* SUBSCRIBE TO QUERY */
+        this.subscribeToQuery();
     });
 
-    /* SUBSCRIBE TO QUERY */
-     this.route.queryParams.subscribe((params)=>{
+  }
+
+  subscribeToQuery(){
+    this.route.queryParams.subscribe((params)=>{
 
       const id = params['id'];
       this.action = params['action'];
@@ -36,7 +40,6 @@ export class UsersComponent implements OnInit {
          if(id){
             this.selectedUser = this.users.find(el=>el.id === +id);
             console.log("users.component - onInit() -> selectedUser : "+ this.selectedUser);
-
           }
        }
      });
@@ -47,12 +50,10 @@ export class UsersComponent implements OnInit {
   }
 
   openUserDesign(user: User){
-
       this.router.navigate(['admin','users'], {queryParams:{action:'design', id: user.id}});
   }
 
   test(){
     this.router.navigate(['admin','users'], {queryParams:{action:'test'}});
-
   }
 }

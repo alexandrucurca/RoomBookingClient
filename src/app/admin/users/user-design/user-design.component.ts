@@ -18,7 +18,7 @@ export class UserDesignComponent implements OnInit {
 
   ngOnInit() {
     console.log("user-design - onInit()");
-    console.log("User in user-design : " + this.user.name);
+    //console.log("User in user-design : " + this.user.name);
   }
 
   navigateToUserEdit(action: string, id:number){
